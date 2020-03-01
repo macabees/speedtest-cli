@@ -17,3 +17,6 @@ Note: requires `docker login`
 
 ## Run image
 `$ docker run -it --rm macabees/speedtest-cli`
+
+## Help
+`$ docker run -it --rm macabees/speedtest-cli help`
