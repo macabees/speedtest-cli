@@ -1,12 +1,5 @@
-FROM debian
+FROM python
 
-RUN apt-get -y update \ 
-    && apt-get -y install \
-        speedtest-cli \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN pip install speedtest-cli
 
-ENV TERM=xterm-256color
-ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-
-CMD ["speedtest-cli"]
+ENTRYPOINT ["/usr/local/bin/speedtest-cli"]
